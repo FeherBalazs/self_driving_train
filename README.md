@@ -1,1 +1,3 @@
 # self_driving_train
+
+It is a proof of concept solution for self-driving trains. For this proof of concept I will use a toy train set. The toy train will use image recognition to recognize signals along the train track, and will automatically react to those signals (slowing down, stopping, starting, and accelerating). I will use a raspberry pi mounted to the train to feed images to an amazon aws gpu instance. A deep convolutional neural net will be implemented for the image recognition. Training images will be hand labelled. The network will predict if there is a stop sign on the image seen, and also the distance from the stop sign. The raspberry pi will use this information to stop the train, or to start it again if the stop sign disappears.
