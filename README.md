@@ -1,3 +1,20 @@
-# self_driving_train
+## Synopsis
 
-It is a proof of concept solution for self-driving trains. For this proof of concept I will use a toy train set. The toy train will use image recognition to recognize signals along the train track, and will automatically react to those signals (slowing down, stopping, starting, and accelerating). I will use a raspberry pi mounted to the train to feed images to an amazon aws gpu instance. A deep convolutional neural net will be implemented for the image recognition. Training images will be hand labelled. The network will predict if there is a stop sign on the image seen, and also the distance from the stop sign. The raspberry pi will use this information to stop the train, or to start it again if the stop sign disappears.
+This project is about building a proof of concept solution that uses a blackberry pi and its camera module to recognise images (signals along the train track), and to use it to control the behaviour of a toy train set.
+
+## Installation
+
+Requirements:
+
+* Python 2.7
+* Keras 1.0.4
+
+For collecting training images for classification camera_non_stop_image_collect.py and camera_stop_image_collect.py should be installed to the raspberry pi. 
+
+* copy to raspberry: e.g.: scp camera_stop_image_collect.py pi@192.168.0.27:Documents/Train
+* copy from raspberry: e.g.: scp pi@192.168.0.27:Documents/Train/data/image* .data
+* run the program for image collection on the pi: python camera_non_stop_image_collect.py
+
+## License
+
+MIT
